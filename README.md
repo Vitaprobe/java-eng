@@ -30,7 +30,16 @@ To test it out, you can use this example:
 cd eet-java/build/libs/
 java -jar eet-java.jar
 ```
-This will produce output to the console, containing mainly FIK which is the important code used for evidence of sale.
+At this point you can experience trouble with file signing. There are templates needed to be used which for some reason has to be perserved in a zip package otherwise they change their signature and the response from Electronic Evidence of Sales will be invalid.
+Therfore unzip the file "templates" in /resources and replace all files with the extracted ones.
+```
+cd eet-java/src/main/resources/eetjava
+unzip templates.zip -d templates
+```
+Now you have to rebuild the solution.
+
+If you have followed all steps, you can now test it at your site.
+The test will produce output to the console, containing mainly FIK which is the important code used for evidence of sale.
 The output could look like this:
 ```
 ...
