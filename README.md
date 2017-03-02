@@ -20,13 +20,14 @@ List of features:
 
 To build this solution, clone this repository and then use [gradle](https://gradle.org/) to build it.
 ```
-git clone https://github.com/Vitaprobe/java-eng-ees.git
-cd java-eng-ees
+git clone https://github.com/Vitaprobe/java-eng.git
+cd java-eng/
 ./gradlew jar
 ```
-Then find eet-java/build/libs/eet-java.jar and use it in your builds.
+Then navigate to eet-java/build/libs/ and run eet-java.jar or use it in your builds.
 To test it out, you can use this example:
 ```
+cd eet-java/build/libs/
 java -jar eet-java.jar
 ```
 This will produce output to the console, containing mainly FIK which is the important code used for evidence of sale.
