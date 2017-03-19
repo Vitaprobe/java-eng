@@ -1300,7 +1300,7 @@ private HashMap<String,String> prepareValues(Date dat_odesl_force,PrvniZaslani p
 	public String sendRequest(String requestBody, URL serviceUrl) throws Exception {
 		byte[] content=requestBody.getBytes("utf-8");
 
-		HttpsURLConnection con=(HttpsURLConnection)serviceUrl.openConnection();
+		HttpURLConnection con=(HttpURLConnection)serviceUrl.openConnection();
 		if (con instanceof HttpsURLConnection){
 			HttpsURLConnection cons=(HttpsURLConnection)con;
 			SSLContext sslCtx;
@@ -1308,7 +1308,7 @@ private HashMap<String,String> prepareValues(Date dat_odesl_force,PrvniZaslani p
 			if (sslContextAlgorithm==null) throw new IllegalArgumentException("sslContextAlgorithm can't be null");
 			sslCtx=SSLContext.getInstance(sslContextAlgorithm);
 			
-			if (false) //trustKeyStore!=null) 
+			if (trustKeyStore!=null) 
 				sslCtx.init(null, new TrustManager[]{new EetTrustManager(trustKeyStore)}, null);
 			else 
 				sslCtx.init(null, new TrustManager[]{new EetTrustManager()}, null);
